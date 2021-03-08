@@ -1,0 +1,102 @@
+body {
+    padding: 20px;
+}
+
+.errormessages {
+    background-color: bisque;
+    font-size: 10pt;
+}
+
+.listing {
+    height: 420px;
+}
+
+.listing.card {
+    margin: 4px;
+    border-width: 3px;
+
+}
+.img-wrapper {
+    position: relative;
+    text-align: center;
+}
+.top-left {
+    position: absolute;
+    top: 32px;
+    left: 80px;
+}
+.card-img-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.listing-card-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.comment-container {
+    max-height: 400px;
+    min-height: 150px;
+    overflow-y: scroll;
+}
+.comment-card {
+    margin-top: -20px;
+    margin-bottom: -25px;
+}
+.comment-date {
+    font-size: 12px;
+}
+.login-info {
+    font-size: 15px;
+}
+
+ul.no-bullets {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.single {
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: #fcfcfc;
+    border: 1px solid #f0f0f0;
+}
+.single h3.side-title {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+.single h3.side-title:after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: #ff173c;
+    display: block;
+    margin-top: 6px;
+}
+
+.single ul {
+    margin-bottom: 0; }
+
+.single li a {
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+}
+.single li a:hover {
+    color: #ff173c;
+}
+.single li:last-child a {
+    border-bottom: 0;
+}

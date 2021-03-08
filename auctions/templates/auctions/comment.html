@@ -1,0 +1,10 @@
+{% load static %}
+<div class="card-body comment-card">
+    <div class="card-title">by <strong>{{ comment.user.username }}</strong> <span class="comment-date text-muted">on {{ comment.date_created }}</span></div>
+    <div class="card-text comment-text">{{ comment.comment }}</div>
+</div>
+{% if not forloop.last %}
+    <hr>
+{% endif %}
+
+

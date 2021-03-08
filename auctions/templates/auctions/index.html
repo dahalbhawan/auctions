@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+    {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}">{{ message }}</div>
+    {% endfor %}
+    <h3 class="mb-4">
+        {{ heading }}
+        {% if category %}
+             Active Listings in {{ category }}
+        {% endif %}
+    </h3><hr>
+    <div class="container-fluid">
+        <div class="row">
+            {% for listing in listings %}
+                    <div class="col-sm-3">
+                        <div class="listing card text-info border-info">
+                            <div class="card-img-container">
+                                <img class="listing-card-img card-img-top" src="{{ listing.image_url }}" alt="image">
+                            </div>
+                            <div class="card-header text-center">
+                                <h5 class="d-inline">{{ listing.title }}</h5>
+                                {% if listing in request.user.watchlist.items.all %}
+                                    <span class="badge badge-warning d-inline">Watchlist</span>
+                                {% endif %}
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text"><strong>Price:</strong> ${{ listing.list_price }}</p>
+                                <p class="card-text text-muted">Listed by {{ listing.author }} on {{ listing.listed_date }}</p>
+                                <a class="btn btn-success btn-sm" href="{% url 'listing' listing.id %}">View Listing</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:4 %}
+
+
+                    {% endif %}
+                {% empty %}
+                    <i>No active listings</i>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
